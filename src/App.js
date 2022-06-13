@@ -1,7 +1,7 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/header/Header';
-import HomePage from './components/pages/Home';
+import Rockets from './components/pages/Rocket';
 import Missions from './components/pages/Mission';
 import Profile from './components/pages/Profile';
 
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Rockets />} />
         <Route path="/missions" element={<Missions />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
