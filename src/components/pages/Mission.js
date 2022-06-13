@@ -1,5 +1,5 @@
-import React from "react";
-import "./styles.css";
+import React from 'react';
+import './styles.css';
 
 export default function Missions() {
   return (
@@ -28,7 +28,7 @@ export default function Missions() {
               </div>
             </td>
             <td>
-              <button type='button'>Join Mission</button>
+              <button type="button">Join Mission</button>
             </td>
           </tr>
         </tbody>
