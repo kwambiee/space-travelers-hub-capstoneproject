@@ -1,5 +1,5 @@
-import React from "react";
-import logo from "../images/planet.png";
+import React from 'react';
+import logo from '../images/planet.png';
 
 export default function Logo() {
   return (
