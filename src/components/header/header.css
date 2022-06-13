@@ -25,5 +25,9 @@ h1 {
 }
 
 .link:hover {
-  text-decoration: underline;
+  border: 2px solid #02bab7;
+}
+
+.logo {
+    display: flex;
 }
