@@ -37,11 +37,12 @@
     transform: rotate(360deg);
   }
 }
-.profileTitles{
+
+.profileTitles {
   display: flex;
   padding: 0.5rem 4rem;
-  
 }
+
 .profileTitles li {
   text-align: start;
   list-style: none;
