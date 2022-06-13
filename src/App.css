@@ -39,10 +39,14 @@
 }
 .profileTitles{
   display: flex;
-  justify-content: space-evenly;
   padding: 0.5rem 4rem;
+  
 }
 .profileTitles li {
   text-align: start;
   list-style: none;
+  border: 1px solid black;
+  width: 300px;
+  margin: 0.5rem;
+  padding: 0.5rem;
 }
