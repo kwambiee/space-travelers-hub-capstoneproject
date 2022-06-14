@@ -19,15 +19,14 @@ export default function Missions() {
     dispatch(fetchMission());
   }, []);
 
-  handleClick = (id) => {
-    if (mission.reserved) {
-      setMissionStatus(() => ({
-        ...missionStatus,
-        status: "ACTIVE MEMBER",
-        action: "Leave Mission",
-      }));
-      dispatch(leaveMission(id));
-    }
+  const handleClick = (id) => {
+    setMissionStatus(() => ({
+      ...missionStatus,
+      status: "ACTIVE MEMBER",
+      action: "Leave Mission",
+    }));
+    dispatch(leaveMission(id));
+
     dispatch(joinMission(id));
   };
 
