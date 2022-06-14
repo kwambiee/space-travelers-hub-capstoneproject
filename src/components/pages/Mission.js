@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./styles.css";
 import { useSelector, useDispatch } from "react-redux";
 import fetchMission, {
@@ -7,26 +7,19 @@ import fetchMission, {
 } from "../../redux/mission/mission";
 
 export default function Missions() {
-  const [missionStatus, setMissionStatus] = useState({
-    status: "NOT A MEMBER",
-    action: "Join Mission",
-  });
-
   const missionsApi = useSelector((state) => state.MissionReducer.missions);
+  console.log(missionsApi);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchMission());
   }, []);
 
-  const handleClick = (id) => {
-    setMissionStatus(() => ({
-      ...missionStatus,
-      status: "ACTIVE MEMBER",
-      action: "Leave Mission",
-    }));
+  const handleLeave = (id) => {
     dispatch(leaveMission(id));
+  };
 
+  const handleJoin = (id) => {
     dispatch(joinMission(id));
   };
 
@@ -48,13 +41,25 @@ export default function Missions() {
               <td>{mission.description}</td>
               <td>
                 <div>
-                  <h6>{missionStatus.status}</h6>
+                  <h6>ACTIVE</h6>
                 </div>
               </td>
               <td>
-                <button type='button' onClick={handleClick}>
-                  {missionStatus.action}
-                </button>
+                {mission.reserved ? (
+                  <button
+                    type='button'
+                    onClick={() => handleLeave(mission.mission_id)}
+                  >
+                    Leave Mission
+                  </button>
+                ) : (
+                  <button
+                    type='button'
+                    onClick={() => handleJoin(mission.mission_id)}
+                  >
+                    Join Mission
+                  </button>
+                )}
               </td>
             </tr>
           ))}
