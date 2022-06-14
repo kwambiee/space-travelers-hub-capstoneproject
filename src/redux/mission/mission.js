@@ -15,12 +15,12 @@ const fetchMission = () => async (dispatch) => {
   );
 };
 
-const InitialState = [];
+const InitialState = { missions: [] };
 
 export const MissionReducer = (state = InitialState, action) => {
   switch (action.type) {
     case MISSION_ADDED:
-      return [...state, action.payload];
+      return { ...state, missions: action.payload };
     default:
       return state;
   }
