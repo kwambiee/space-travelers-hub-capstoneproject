@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
-import "./styles.css";
-import { useSelector, useDispatch } from "react-redux";
-import fetchMission from "../../redux/mission/mission";
+import './styles.css';
+import { useSelector, useDispatch } from 'react-redux';
+import fetchMission from '../../redux/mission/mission';
 
 export default function Missions() {
   const missionsApi = useSelector((state) => state.MissionReducer.missions);
@@ -34,7 +34,7 @@ export default function Missions() {
                 </div>
               </td>
               <td>
-                <button type='button'>Join Mission</button>
+                <button type="button">Join Mission</button>
               </td>
             </tr>
           ))}
