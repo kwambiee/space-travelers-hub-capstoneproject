@@ -10,14 +10,14 @@ const AddMission = (mission) => ({
   payload: mission,
 });
 
-const joinMission = (mission_id) => ({
+export const joinMission = (id) => ({
   type: JOIN_MISSION,
-  payload: mission_id,
+  payload: id,
 });
 
-const leaveMission = (mission_id) => ({
+export const leaveMission = (id) => ({
   type: LEAVE_MISSION,
-  payload: mission_id,
+  payload: id,
 });
 
 const fetchMission = () => async (dispatch) => {

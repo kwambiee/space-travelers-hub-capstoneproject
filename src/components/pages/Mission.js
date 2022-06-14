@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
 import { useSelector, useDispatch } from "react-redux";
-import fetchMission from "../../redux/mission/mission";
+import fetchMission, {
+  joinMission,
+  leaveMission,
+} from "../../redux/mission/mission";
 
 export default function Missions() {
   const [missionStatus, setMissionStatus] = useState({
@@ -15,6 +18,16 @@ export default function Missions() {
   useEffect(() => {
     dispatch(fetchMission());
   }, []);
+
+  handleClick = (id) => {
+    setMissionStatus(() => ({
+      ...missionStatus,
+      status: "ACTIVE MEMBER",
+      action: "Leave Mission",
+    }));
+    dispatch(joinMission(id));
+    dispatch(leaveMission(id));
+  };
 
   return (
     <div>
@@ -38,7 +51,9 @@ export default function Missions() {
                 </div>
               </td>
               <td>
-                <button type='button'>{missionStatus.action}</button>
+                <button type='button' onClick={handleClick}>
+                  {missionStatus.action}
+                </button>
               </td>
             </tr>
           ))}
