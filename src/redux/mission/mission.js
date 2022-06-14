@@ -27,6 +27,12 @@ export const MissionReducer = (state = InitialState, action) => {
   switch (action.type) {
     case MISSION_ADDED:
       return { ...state, missions: action.payload };
+    case JOIN_MISSION:
+      const newState = state.filter(
+        (Amission) => Amission.id !== action.payload
+      );
+      return { ...newState, reserved: true };
+
     default:
       return state;
   }
