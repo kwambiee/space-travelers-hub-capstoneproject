@@ -18,13 +18,15 @@ const HomePage = () => {
   return (
     <ul>
       {data.map(({
-        rocketName, description, flickrImages,
+        id, rocketName, description, flickrImages, reserved,
       }) => (
         <RocketCard
-          key={rocketName}
+          key={id}
           rocketName={rocketName}
           description={description}
           flickrImages={flickrImages}
+          reserved={reserved}
+          id={id}
         />
       ))}
     </ul>
