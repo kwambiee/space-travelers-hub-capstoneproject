@@ -20,13 +20,15 @@ export default function Missions() {
   }, []);
 
   handleClick = (id) => {
-    setMissionStatus(() => ({
-      ...missionStatus,
-      status: "ACTIVE MEMBER",
-      action: "Leave Mission",
-    }));
+    if (mission.reserved) {
+      setMissionStatus(() => ({
+        ...missionStatus,
+        status: "ACTIVE MEMBER",
+        action: "Leave Mission",
+      }));
+      dispatch(leaveMission(id));
+    }
     dispatch(joinMission(id));
-    dispatch(leaveMission(id));
   };
 
   return (
