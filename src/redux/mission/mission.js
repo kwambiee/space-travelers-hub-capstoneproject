@@ -35,17 +35,18 @@ export const MissionReducer = (state = InitialState, action) => {
       return { ...state, missions: action.payload };
     case JOIN_MISSION:
       const index = state.missions.findIndex(
-        (Amission) => Amission.id !== action.payload
+        (obj) => obj.mission_id == action.payload
       );
-      state.missions[index].reserved = true;
-      console.log(state);
-      return state;
+      const newArr = [...state.missions];
+      newArr[index].reserved = true;
+      return { ...state, missions: [...newArr] };
     case LEAVE_MISSION:
       const i = state.missions.findIndex(
-        (Amission) => Amission.id == action.payload
+        (obj) => obj.mission_id == action.payload
       );
-      state.missions[i].reserved = false;
-      return state;
+      const leaveArr = [...state.missions];
+      leaveArr[i].reserved = false;
+      return { ...state, missions: [...leaveArr] };
     default:
       return state;
   }

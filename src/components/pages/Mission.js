@@ -41,7 +41,7 @@ export default function Missions() {
               <td>{mission.description}</td>
               <td>
                 <div>
-                  <h6>ACTIVE</h6>
+                  <h6>{mission.reserved ? "ACTIVE MEMBER" : "NOT A MEMBER"}</h6>
                 </div>
               </td>
               <td>
