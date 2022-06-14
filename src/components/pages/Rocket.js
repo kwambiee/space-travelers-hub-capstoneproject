@@ -1,5 +1,15 @@
 import React from 'react';
 
-export default function Rockets() {
-  return <div>Rocket</div>;
+const RocketCard = (props) => {
+  const {
+    rocketName, description, flickrImages,
+  } = props;
+  return (
+    <div className="rocket-card">
+      <img src={flickrImages} width={200} height={200} alt={rocketName} />
+    </div>
+  );
 }
+
+
+export default RocketCard;
