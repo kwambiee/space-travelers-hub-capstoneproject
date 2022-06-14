@@ -9,13 +9,10 @@ const AddMission = (mission) => ({
 });
 
 const fetchMission = () => async (dispatch) => {
-  await axios
-    .get("https://api.spacexdata.com/v3/missions")
-    .then((response) => console.log(response.data))
-    .then(
-      (response) => dispatch(AddMission(response.data)),
-      (err) => dispatch({ type: MISSION_FAILURE, err })
-    );
+  await axios.get("https://api.spacexdata.com/v3/missions").then(
+    (response) => dispatch(AddMission(response.data)),
+    (err) => dispatch({ type: MISSION_FAILURE, err })
+  );
 };
 
 const InitialState = { missions: [] };

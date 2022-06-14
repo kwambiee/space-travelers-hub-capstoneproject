@@ -26,24 +26,20 @@ export default function Missions() {
           </tr>
         </thead>
         <tbody>
-          mission.map((mission)=)
-          <tr>
-            <td>Thaicom</td>
-            <td>
-              The Missions section displays a list of current missions along
-              with their brief description and participation status. There is
-              also a button next to each mission that allows users to join the
-              selected mission or leave the mission the user joined earlier.
-            </td>
-            <td>
-              <div>
-                <h6>not a member</h6>
-              </div>
-            </td>
-            <td>
-              <button type='button'>Join Mission</button>
-            </td>
-          </tr>
+          {missions.map((mission) => (
+            <tr key={mission.mission_id}>
+              <td>{mission.mission_name}</td>
+              <td>{mission.description}</td>
+              <td>
+                <div>
+                  <h6>not a member</h6>
+                </div>
+              </td>
+              <td>
+                <button type='button'>Join Mission</button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
