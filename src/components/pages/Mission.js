@@ -1,16 +1,14 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+
 import "./styles.css";
 import { useSelector, useDispatch } from "react-redux";
 import fetchMission from "../../redux/mission/mission";
 
 export default function Missions() {
-  const missions = useSelector((state) => state.missions);
-  console.log(missions);
+  const missionsApi = useSelector((state) => state.MissionReducer.missions);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("kwambiee");
     dispatch(fetchMission());
   }, []);
 
@@ -26,7 +24,7 @@ export default function Missions() {
           </tr>
         </thead>
         <tbody>
-          {missions.map((mission) => (
+          {missionsApi.map((mission) => (
             <tr key={mission.mission_id}>
               <td>{mission.mission_name}</td>
               <td>{mission.description}</td>

@@ -1,7 +1,7 @@
-import axios from "axios";
+import axios from 'axios';
 
-const MISSION_ADDED = "react-app/redux/MISSION_ADDED";
-const MISSION_FAILURE = "react-app/redux/MISSION_FAILURE";
+const MISSION_ADDED = 'react-app/redux/MISSION_ADDED';
+const MISSION_FAILURE = 'react-app/redux/MISSION_FAILURE';
 
 const AddMission = (mission) => ({
   type: MISSION_ADDED,
@@ -9,9 +9,9 @@ const AddMission = (mission) => ({
 });
 
 const fetchMission = () => async (dispatch) => {
-  await axios.get("https://api.spacexdata.com/v3/missions").then(
+  await axios.get('https://api.spacexdata.com/v3/missions').then(
     (response) => dispatch(AddMission(response.data)),
-    (err) => dispatch({ type: MISSION_FAILURE, err })
+    (err) => dispatch({ type: MISSION_FAILURE, err }),
   );
 };
 
