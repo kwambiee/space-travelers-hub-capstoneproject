@@ -1,10 +1,14 @@
-import React, { useEffect } from 'react';
-
-import './styles.css';
-import { useSelector, useDispatch } from 'react-redux';
-import fetchMission from '../../redux/mission/mission';
+import React, { useState, useEffect } from "react";
+import "./styles.css";
+import { useSelector, useDispatch } from "react-redux";
+import fetchMission from "../../redux/mission/mission";
 
 export default function Missions() {
+  const [missionStatus, setMissionStatus] = useState({
+    status: "NOT A MEMBER",
+    action: "Join Mission",
+  });
+
   const missionsApi = useSelector((state) => state.MissionReducer.missions);
   const dispatch = useDispatch();
 
@@ -30,11 +34,11 @@ export default function Missions() {
               <td>{mission.description}</td>
               <td>
                 <div>
-                  <h6>not a member</h6>
+                  <h6>{missionStatus.status}</h6>
                 </div>
               </td>
               <td>
-                <button type="button">Join Mission</button>
+                <button type='button'>{missionStatus.action}</button>
               </td>
             </tr>
           ))}
