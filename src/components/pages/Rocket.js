@@ -1,4 +1,5 @@
 import React from 'react';
+import './rockets.css';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { reserveRocket } from '../../redux/rockets/rocket';
@@ -39,7 +40,12 @@ const RocketCard = (props) => {
           {' '}
           {rocketName}
         </h1>
-        <p>{description}</p>
+        <p>
+          <span className="rocket-reserve" style={{ display: `${!reserved ? 'none' : 'inline'}` }}>
+            Reserved
+          </span>
+          {description}
+        </p>
         <div>
           {reserveButtons}
         </div>
