@@ -1,14 +1,15 @@
-import React from "react";
-import { shallow, configure } from "enzyme";
-import Missions from "./Mission";
-import Adapter from "enzyme-adapter-react-16";
+import React from 'react';
+import { shallow, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import Missions from './Mission';
+
 configure({ adapter: new Adapter() });
 
-it("renders without crashing", () => {
+it('renders without crashing', () => {
   shallow(<Missions />);
 });
 
-it("renders missions", () => {
+it('renders missions', () => {
   const wrapper = shallow(<Missions />);
   const MissionTest = (
     <table>

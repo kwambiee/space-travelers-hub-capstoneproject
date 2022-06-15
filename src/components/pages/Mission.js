@@ -1,7 +1,7 @@
-import React from "react";
-import "./mission.css";
-import { useSelector, useDispatch } from "react-redux";
-import { joinMission, leaveMission } from "../../redux/mission/mission";
+import React from 'react';
+import './mission.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { joinMission, leaveMission } from '../../redux/mission/mission';
 
 export default function Missions() {
   const missionsApi = useSelector((state) => state.MissionReducer.missions);
@@ -17,7 +17,7 @@ export default function Missions() {
 
   return (
     <div>
-      <table className='table-container'>
+      <table className="table-container">
         <thead>
           <tr>
             <th>Mission</th>
@@ -32,14 +32,14 @@ export default function Missions() {
               <td>{mission.mission_name}</td>
               <td>{mission.description}</td>
               <td>
-                <div className='reserve'>
+                <div className="reserve">
                   {mission.reserved ? (
                     <h6
                       style={{
-                        backgroundColor: "cyan",
-                        border: "2px solid transparent",
-                        borderRadius: "2px",
-                        fontSize: "1rem",
+                        backgroundColor: 'cyan',
+                        border: '2px solid transparent',
+                        borderRadius: '2px',
+                        fontSize: '1rem',
                       }}
                     >
                       ACTIVE MEMBER
@@ -47,10 +47,10 @@ export default function Missions() {
                   ) : (
                     <h6
                       style={{
-                        backgroundColor: "#807f7f",
-                        border: "2px solid transparent",
-                        borderRadius: "2px",
-                        fontSize: "1rem",
+                        backgroundColor: '#807f7f',
+                        border: '2px solid transparent',
+                        borderRadius: '2px',
+                        fontSize: '1rem',
                       }}
                     >
                       NOT A MEMBER
@@ -58,16 +58,16 @@ export default function Missions() {
                   )}
                 </div>
               </td>
-              <td className='Buttons'>
+              <td className="Buttons">
                 {mission.reserved ? (
                   <button
-                    type='button'
+                    type="button"
                     style={{
-                      border: "2px dotted red",
-                      borderRadius: "2px",
-                      color: "red",
-                      margin: "1rem",
-                      padding: "0.5rem",
+                      border: '2px dotted red',
+                      borderRadius: '2px',
+                      color: 'red',
+                      margin: '1rem',
+                      padding: '0.5rem',
                     }}
                     onClick={() => handleLeave(mission.mission_id)}
                   >
@@ -75,11 +75,11 @@ export default function Missions() {
                   </button>
                 ) : (
                   <button
-                    type='button'
+                    type="button"
                     style={{
-                      borderRadius: "2px",
-                      margin: "1rem",
-                      padding: "0.5rem",
+                      borderRadius: '2px',
+                      margin: '1rem',
+                      padding: '0.5rem',
                     }}
                     onClick={() => handleJoin(mission.mission_id)}
                   >
