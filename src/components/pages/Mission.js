@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+import './mission.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { joinMission, leaveMission } from '../../redux/mission/mission';
 
