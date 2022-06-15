@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import MyRockets from './reservedRocket';
 
 const Profile = () => {
   const [missionJoined, setMissionJoined] = useState([]);
@@ -13,10 +14,14 @@ const Profile = () => {
     reserveMission();
   }, []);
 
+  const rocketState = useSelector(
+    (state) => state.rocketReducer.rockets,
+  ).filter((rocket) => rocket.reserved === true);
+
   return (
     <div>
-      <div className="profileTitles">
-        <span>
+      <div className="profile-container">
+        <span className="profile-missions">
           <h2>My Missions</h2>
           <ul>
             {missionJoined.map((mission) => (
@@ -25,11 +30,10 @@ const Profile = () => {
           </ul>
         </span>
 
-        <span>
+        <span className="profile-rockets">
           <h2>My Rockets</h2>
           <ul>
-            <li>Falcon 9</li>
-            <li>Falcon Heavy</li>
+            <MyRockets data={rocketState} />
           </ul>
         </span>
       </div>
