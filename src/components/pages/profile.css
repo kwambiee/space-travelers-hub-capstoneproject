@@ -1,0 +1,27 @@
+.profile-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.profile-container li {
+  text-align: start;
+  list-style: none;
+  border: 1px solid black;
+  width: 300px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.profile-missions {
+  width: 45%;
+}
+
+.profile-rockets {
+  width: 45%;
+}
+
+li.profile-item {
+  list-style-type: none;
+  border: 1px solid;
+  padding: 10px;
+}
