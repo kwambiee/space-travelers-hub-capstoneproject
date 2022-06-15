@@ -1,18 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './styles.css';
 import { useSelector, useDispatch } from 'react-redux';
-import fetchMission, {
-  joinMission,
-  leaveMission,
-} from '../../redux/mission/mission';
+import { joinMission, leaveMission } from '../../redux/mission/mission';
 
 export default function Missions() {
   const missionsApi = useSelector((state) => state.MissionReducer.missions);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchMission());
-  }, []);
 
   const handleLeave = (id) => {
     dispatch(leaveMission(id));
