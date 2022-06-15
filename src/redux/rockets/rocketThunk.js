@@ -6,6 +6,7 @@ const fetchRocketThunk = () => async (dispatch) => {
       (data) => data.json(),
     );
     const payload = response.map((rocket) => ({
+      id: rocket.id,
       rocketName: rocket.rocket_name,
       description: rocket.description,
       flickrImages:
