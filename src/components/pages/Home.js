@@ -1,6 +1,6 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import RocketCard from './Rocket';
+import React from "react";
+import { useSelector } from "react-redux";
+import RocketCard from "./Rocket";
 
 const HomePage = () => {
   const data = useSelector((state) => state.rocketReducer.rockets);
@@ -17,9 +17,7 @@ const HomePage = () => {
   }
   return (
     <ul>
-      {data.map(({
-        id, rocketName, description, flickrImages, reserved,
-      }) => (
+      {data.map(({ id, rocketName, description, flickrImages, reserved }) => (
         <RocketCard
           key={id}
           rocketName={rocketName}
