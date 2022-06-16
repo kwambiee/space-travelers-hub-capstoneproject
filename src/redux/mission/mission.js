@@ -29,28 +29,47 @@ const fetchMission = () => async (dispatch) => {
 
 const InitialState = { missions: [] };
 
-export const MissionReducer = (state = InitialState, action) => {
-  const Index = state.missions.findIndex(
-    (obj) => obj.mission_id === action.payload,
-  );
-  const newArr = [...state.missions];
-  const Arr = state.missions.findIndex(
-    (obj) => obj.mission_id === action.payload,
-  );
-  const leaveArr = [...state.missions];
+export const MissionReducer = (state = InitialState, { type, payload }) => {
+  // const Index = state.missions.findIndex(
+  //   (obj) => obj.mission_id === action.payload,
+  // );
+  // const newArr = [...state.missions];
+  // const Arr = state.missions.findIndex(
+  //   (obj) => obj.mission_id === action.payload,
+  // );
+  // const leaveArr = [...state.missions];
 
-  switch (action.type) {
+  switch (type) {
     case MISSION_ADDED:
-      return { ...state, missions: action.payload };
+      return { missions: [...payload] };
+
     case JOIN_MISSION:
-      newArr[Index].reserved = true;
-      return { ...state, missions: [...newArr] };
+      return {
+        ...state,
+        missions: state.missions.map((mission) => {
+          if (mission.mission_id !== payload) return mission;
+          return { ...mission, reserved: true };
+        }),
+      };
+
     case LEAVE_MISSION:
-      leaveArr[Arr].reserved = false;
-      return { ...state, missions: [...leaveArr] };
+      return {
+        ...state,
+        missions: state.missions.map((mission) => {
+          if (mission.mission_id !== payload) return mission;
+          return { ...mission, reserved: false };
+        }),
+      };
     default:
       return state;
   }
 };
 
 export default fetchMission;
+
+// ...state,
+//         rockets: state.rockets.map((rocket) => {
+//           if (rocket.id !== payload) return rocket;
+//           return { ...rocket, reserved: !rocket.reserved };
+//         }),
+//       };
