@@ -1,12 +1,11 @@
 .profile-container {
   display: flex;
   justify-content: space-around;
- 
-  
 }
-.profile-container h2{
-font-weight: bolder;
-font-size: 1.5rem;
+
+.profile-container h2 {
+  font-weight: bolder;
+  font-size: 1.5rem;
 }
 
 .profile-container li {
@@ -27,8 +26,9 @@ font-size: 1.5rem;
 li.profile-item {
   list-style-type: none;
   padding: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    width: 400px
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
+  width: 400px;
 }
