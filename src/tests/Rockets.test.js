@@ -19,7 +19,7 @@ describe('Check Homepage', () => {
   });
 });
 
-describe('No Rocket Available', () => {
+describe('No Rockets Available', () => {
   it('renders correctly', () => {
     render(<RocketsProvider />);
     expect(screen.getByText('No rockets available')).toBeInTheDocument();
