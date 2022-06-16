@@ -31,14 +31,4 @@ describe('Rockets Component', () => {
     const allRockets = renderer.create(<RocketsProvider />).toJSON();
     expect(allRockets).toMatchSnapshot();
   });
-
-  // test('Reserve a rocket and cancel reservation', async () => {
-  //   render(<RocketsProvider />);
-  //   const reserveButton = await screen.findAllByText('Reserve Rocket');
-  //   const badges = await screen.findAllByText('Reserved');
-  //   expect(reserveButton[0].textContent).toBe('Reserve Rocket');
-  //   fireEvent.click(reserveButton[0]);
-  //   expect(badges[0].textContent).toBe('Reserved');
-  //   expect(reserveButton[0].textContent).toBe('Cancel Reservation');
-  // });
 });

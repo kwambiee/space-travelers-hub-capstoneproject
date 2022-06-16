@@ -19,18 +19,6 @@ describe('Check Mission page', () => {
   });
 });
 
-// test("Reserve a rocket and cancel reservation", async () => {
-//   render(<MissionsProvider />);
-//   const joinButton = await screen.findAllByText("Join Mission");
-//   const badges = await screen.findAllByText("Active Member");
-//   expect(joinButton[0].textContent).toBe("Join Mission");
-//   fireEvent.click(joinButton[0]);
-//   expect(badges[0].textContent).toBe("Active Member");
-//   expect(Button[0].textContent).toBe("Leave Mission");
-// });
-
-// import { render, screen, fireEvent } from "@testing-library/react";
-
 const Button = ({ onClick, children }) => (
   <button type="button" onClick={onClick}>
     {children}
