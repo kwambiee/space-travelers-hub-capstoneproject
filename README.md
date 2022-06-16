@@ -4,9 +4,9 @@
 
 > Space Travel allows users to book rockets and join selected missions.
 
-![missions](./missions.png)
-![rockets](./rockets.png)
-![profile](./profile.png)
+![missions](./mission.png) <br>
+![rockets](./rocket.png) <br>
+![profile](./profile.png) <br>
 
 ## Built With
 
