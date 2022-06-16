@@ -29,14 +29,14 @@ A Web Browser (preferably Google Chrome)
 
 - Clone the GitHub Repository
 - Go to the Project Directory
-- Run ```npm install```
-- Run ```npm run build``` to build the project
+- Run `npm install`
+- Run `npm run build` to build the project
 
 ### Usage
 
-- Run ```npm run start``` to start the live server
+- Run `npm run start` to start the live server
 
-## Author 1
+## Authors
 
 👤 **Toyosi Taiwo**
 
@@ -44,7 +44,7 @@ A Web Browser (preferably Google Chrome)
 - Twitter: [@tboytaiwo](https://twitter.com/Tboytaiwo)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/taiwo-toyosi)
 
-👤 **Author 2**
+👤 **Joy Kwamboka**
 
 - GitHub: [Joyous Kwambiee](https://github.com/kwambiee)
 - Twitter: [Joy Kwambiee](https://twitter.com/kwambiee)
