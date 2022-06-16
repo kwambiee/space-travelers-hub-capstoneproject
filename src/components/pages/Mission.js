@@ -29,7 +29,9 @@ export default function Missions() {
         <tbody>
           {missionsApi.map((mission) => (
             <tr key={mission.mission_id}>
-              <td>{mission.mission_name}</td>
+              <td style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>
+                {mission.mission_name}
+              </td>
               <td>{mission.description}</td>
               <td>
                 <div className="reserve">

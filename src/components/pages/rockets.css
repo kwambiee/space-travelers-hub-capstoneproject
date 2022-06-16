@@ -1,6 +1,7 @@
 .rocket-card {
   display: flex;
   margin: 30px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px 0 inset;
 }
 
 button {

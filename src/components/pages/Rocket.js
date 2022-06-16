@@ -34,21 +34,28 @@ const RocketCard = (props) => {
 
   return (
     <div className="rocket-card">
-      <img src={flickrImages} width={200} height={200} alt={rocketName} />
+      <img
+        src={flickrImages}
+        width={200}
+        height={200}
+        alt={rocketName}
+        style={{ borderRadius: '3px' }}
+      />
       <div className="rocket-card-content">
         <h1>
           {' '}
           {rocketName}
         </h1>
         <p>
-          <span className="rocket-reserve" style={{ display: `${!reserved ? 'none' : 'inline'}` }}>
+          <span
+            className="rocket-reserve"
+            style={{ display: `${!reserved ? 'none' : 'inline'}` }}
+          >
             Reserved
           </span>
           {description}
         </p>
-        <div>
-          {reserveButtons}
-        </div>
+        <div>{reserveButtons}</div>
       </div>
     </div>
   );
