@@ -1,6 +1,7 @@
 .rocket-card {
   display: flex;
   margin: 30px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 }
 
 button {
@@ -25,6 +26,7 @@ button.rocket-cancel {
 
 .rocket-card-content {
   margin-left: 20px;
+  
 }
 
 .rocket-card-content h1 {

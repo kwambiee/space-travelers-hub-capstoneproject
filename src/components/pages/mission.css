@@ -18,13 +18,16 @@ td {
 
 tbody tr:nth-child(even) {
   background-color: #e8e8e8;
-  border-top: none;
+  
 }
 
 th {
-  border-right: 1px solid black;
+  
   line-height: 1.5rem;
-  font-weight: bold;
+  font-weight: bolder;
+  font-size: 20px;
+  background-image: linear-gradient(to right, #DECBA4, #3E5151);
+    color: white;
 }
 
 td:nth-child(2) {
