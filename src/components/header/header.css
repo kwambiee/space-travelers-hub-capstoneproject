@@ -19,11 +19,15 @@ h1 {
   padding-right: 10%;
 }
 
-.link {
+.link, .active-link {
   text-decoration: none;
   font-weight: 600;
   transition: 200ms;
   padding: 10%;
+}
+
+.active-link {
+  text-decoration: underline;
 }
 
 .link:hover {
@@ -32,4 +36,10 @@ h1 {
 
 .logo {
   display: flex;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
 }
