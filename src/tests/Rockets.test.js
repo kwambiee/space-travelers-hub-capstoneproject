@@ -27,10 +27,9 @@ describe('No Rocket Available', () => {
 });
 
 describe('Rockets Component', () => {
-  it('renders rockets', async () => {
-    render(<RocketsProvider />);
-    const allRockets = await screen.findAllByText('Reserve Rocket');
-    expect(allRockets).toHaveLength(4);
+  it('renders rockets', () => {
+    const allRockets = renderer.create(<RocketsProvider />).toJSON();
+    expect(allRockets).toMatchSnapshot();
   });
 
   test('Reserve a rocket and cancel reservation', async () => {

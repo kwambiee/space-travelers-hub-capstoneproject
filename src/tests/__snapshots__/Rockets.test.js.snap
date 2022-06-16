@@ -9,3 +9,13 @@ exports[`Check Homepage renders correctly 1`] = `
   </li>
 </ul>
 `;
+
+exports[`Rockets Component renders rockets 1`] = `
+<ul>
+  <li>
+    <h1>
+      No rockets available
+    </h1>
+  </li>
+</ul>
+`;
