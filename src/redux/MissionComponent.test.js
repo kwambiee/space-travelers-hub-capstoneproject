@@ -1,8 +1,8 @@
-import React from "react";
-import { Provider } from "react-redux";
-import Missions from "../components/pages/Mission";
-import renderer from "react-test-renderer";
-import store from "./configureStore";
+import React from 'react';
+import { Provider } from 'react-redux';
+import renderer from 'react-test-renderer';
+import Missions from '../components/pages/Mission';
+import store from './configureStore';
 
 const MissionsProvider = () => (
   <Provider store={store}>
@@ -10,8 +10,8 @@ const MissionsProvider = () => (
   </Provider>
 );
 
-describe("Check Mission page", () => {
-  it("renders correctly", () => {
+describe('Check Mission page', () => {
+  it('renders correctly', () => {
     const component = renderer.create(<MissionsProvider />).toJSON();
     expect(component).toMatchSnapshot();
   });
