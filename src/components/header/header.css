@@ -19,7 +19,8 @@ h1 {
   padding-right: 10%;
 }
 
-.link, .active-link {
+.link,
+.active-link {
   text-decoration: none;
   font-weight: 600;
   transition: 200ms;
