@@ -1,9 +1,9 @@
-import axios from 'axios';
+import axios from "axios";
 
-const MISSION_ADDED = 'react-app/redux/MISSION_ADDED';
-const MISSION_FAILURE = 'react-app/redux/MISSION_FAILURE';
-const JOIN_MISSION = 'react-app/redux/JOIN_MISSION';
-const LEAVE_MISSION = 'react-app/redux/LEAVE_MISSION';
+const MISSION_ADDED = "react-app/redux/MISSION_ADDED";
+const MISSION_FAILURE = "react-app/redux/MISSION_FAILURE";
+const JOIN_MISSION = "react-app/redux/JOIN_MISSION";
+const LEAVE_MISSION = "react-app/redux/LEAVE_MISSION";
 
 const AddMission = (mission) => ({
   type: MISSION_ADDED,
@@ -21,36 +21,55 @@ export const leaveMission = (id) => ({
 });
 
 const fetchMission = () => async (dispatch) => {
-  await axios.get('https://api.spacexdata.com/v3/missions').then(
+  await axios.get("https://api.spacexdata.com/v3/missions").then(
     (response) => dispatch(AddMission(response.data)),
-    (err) => dispatch({ type: MISSION_FAILURE, err }),
+    (err) => dispatch({ type: MISSION_FAILURE, err })
   );
 };
 
 const InitialState = { missions: [] };
 
-export const MissionReducer = (state = InitialState, action) => {
-  const Index = state.missions.findIndex(
-    (obj) => obj.mission_id === action.payload,
-  );
-  const newArr = [...state.missions];
-  const Arr = state.missions.findIndex(
-    (obj) => obj.mission_id === action.payload,
-  );
-  const leaveArr = [...state.missions];
+export const MissionReducer = (state = InitialState, { type, payload }) => {
+  // const Index = state.missions.findIndex(
+  //   (obj) => obj.mission_id === action.payload,
+  // );
+  // const newArr = [...state.missions];
+  // const Arr = state.missions.findIndex(
+  //   (obj) => obj.mission_id === action.payload,
+  // );
+  // const leaveArr = [...state.missions];
 
-  switch (action.type) {
+  switch (type) {
     case MISSION_ADDED:
-      return { ...state, missions: action.payload };
+      return { missions: [...payload] };
+
     case JOIN_MISSION:
-      newArr[Index].reserved = true;
-      return { ...state, missions: [...newArr] };
+      return {
+        ...state,
+        missions: state.missions.map((mission) => {
+          if (mission.mission_id !== payload) return mission;
+          return { ...mission, reserved: true };
+        }),
+      };
+
     case LEAVE_MISSION:
-      leaveArr[Arr].reserved = false;
-      return { ...state, missions: [...leaveArr] };
+      return {
+        ...state,
+        missions: state.missions.map((mission) => {
+          if (mission.mission_id !== payload) return mission;
+          return { ...mission, reserved: false };
+        }),
+      };
     default:
       return state;
   }
 };
 
 export default fetchMission;
+
+// ...state,
+//         rockets: state.rockets.map((rocket) => {
+//           if (rocket.id !== payload) return rocket;
+//           return { ...rocket, reserved: !rocket.reserved };
+//         }),
+//       };
