@@ -9,6 +9,7 @@ const fetchRocketThunk = () => async (dispatch) => {
       id: rocket.id,
       rocketName: rocket.rocket_name,
       description: rocket.description,
+      reserved: false,
       flickrImages:
         rocket.flickr_images[
           Math.floor(Math.random() * rocket.flickr_images.length)
